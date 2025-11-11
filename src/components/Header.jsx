@@ -12,10 +12,10 @@ function Header(){
     }, []);
 
     return (
-        <>
-            <div className='container-fluid'>
-                <h3 className='text-center bg-black'>{hora}</h3>
-            </div>
+        <>  
+            <nav>
+                <h3 className='text-center fondo'>{hora}</h3>  
+            </nav>
         </>
     );
 }
