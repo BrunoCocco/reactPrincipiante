@@ -2,10 +2,10 @@ import { useState } from 'react'
 import './Header.css'
 
 function Wallet(){
-    const [saldo, setSaldo] = useState(0)
+    const [saldo, setSaldo] = useState(10)
     const [monto, setMonto] = useState(0)
 
-    function sumar(){
+  function sumar(){
      const nuevosaldo = saldo + monto
     return(setSaldo(nuevosaldo))}
 
@@ -15,15 +15,19 @@ function Wallet(){
         <div className='container-fluid'>
              <h1 className='text-center '>wallet interactiva!</h1>
         </div>
+
+      
         <div>{saldo}</div>
-        <input type="text" onChange={setMonto} />
-        <button onClick={(sumar) => setSaldo(() => saldo + monto )}>
+
+
+        <input type="text" onChange={(e)=> setMonto(e.target.value)} />
+        <div>
+        <button onClick={() => setSaldo(() => saldo + monto )}>
           agregar
         </button>
-        <button onClick={() => setSaldo(() => saldo - 1)}>
-         quitar
-        </button>
+        </div>
         </>
     );
 }
+
 export default Wallet;
